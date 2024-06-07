@@ -322,7 +322,7 @@ func (api *ConsensusAPI) forkchoiceUpdated(update engine.ForkchoiceStateV1, payl
 		// If the head block is already in our canonical chain, the beacon client is
 		// probably resyncing. Ignore the update.
 		log.Info("Ignoring beacon update to old head", "number", block.NumberU64(), "hash", update.HeadBlockHash, "age", common.PrettyAge(time.Unix(int64(block.Time()), 0)), "have", api.eth.BlockChain().CurrentBlock().Number)
-		return valid(nil), nil
+		// return valid(nil), nil
 	}
 	api.eth.SetSynced()
 
